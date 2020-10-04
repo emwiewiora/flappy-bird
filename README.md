@@ -12,4 +12,12 @@ Ania's YouTube Channel: https://www.youtube.com/aniakubow<br>
 
 
 Todo:<br>
-Styling<br>
+Player Sprite - done<br>
+Column Sprite - done<br>
+Background img - done<br>
+ground img - done<br>
+Score - done but needs work<br>
+Score board<br>
+Start button<br>
+Random Gap -  done<br>
+level based adjustments<br>

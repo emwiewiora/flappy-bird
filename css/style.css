@@ -5,7 +5,7 @@ body {
     width: 500px;
     height: 730px;
     position: absolute;
-    left: 80px;
+    left: 88px;
 }
 
 .border-left {
@@ -14,6 +14,7 @@ body {
     position: absolute;
     background-color: white;
     z-index: +2;
+    top: -5px;
 }
 
 .border-right {
@@ -22,27 +23,44 @@ body {
     position: absolute;
     background-color: white;
     z-index: +2;
-    left: 580px;
+    left: 585px;
+    top: -5px;
 }
 
 .border-top {
-    width: 550px;
+    width: 500px;
     height: 50px;
     position: absolute;
-    background-color: white;
+    background-color:tan;
     z-index: +2;
     top: -15px;
+    display: flex;
+}
+
+.score-box {
+    width: 50px;
+    height: 40px;
+    border: solid 1px;
+    border-color: black;
+    /* background-color: brown; */
+    margin-top: 5px;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 900;
+    color: blueviolet;
 }
 
 .sky {
-    background-color: lightblue;
+    /* background-color: lightblue; */
+    background-image: url('/img/fb-game-background.png');
     width: 500px;
     height: 580px;
     position: absolute;
 }
 
 .ground {
-    background-color: brown;
+    /* background-color: brown; */
+    background-image: url('/img/bottom-background.png');
     width: 500px;
     height: 150px;
     position: absolute;
@@ -51,23 +69,25 @@ body {
 }
 
 .bird {
-    background-color: yellow;
+    /* background-color: yellow; */
+    background-image: url('/img/flappy-bird.png');
     position: absolute;
     width: 60px;
     height: 45px;
+    border-radius: 50%;
 }
 
 .obstacle {
-    background-color: green;
-    /* background-image: url('imagefile.png'); */
+    /* background-color: green; */
+    background-image: url('/img/flappybird-pipe.png');
     width: 60px;
     height: 300px;
     position: absolute;
 }
 
 .topObstacle {
-    background-color: green;
-    /* background-image: url('imagefile.png'); */
+    /* background-color: green; */
+    background-image: url('/img/flappybird-pipe.png');
     transform: rotate(180deg);
     width: 60px;
     height: 300px;
