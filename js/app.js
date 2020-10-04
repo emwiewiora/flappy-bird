@@ -34,9 +34,38 @@ document.addEventListener('DOMContentLoaded' , () => {
 
     document.addEventListener('keyup', control)
 
+    function generateCloud(){
+        let cloudLeft = 500
+        let randomCloudHeight = 400 + (Math.random() * 200)
+        let cloudBottom = randomCloudHeight
+        const cloud = document.createElement('div')
+
+        if (!isGameOver) {
+            cloud.classList.add('cloud')
+        }
+        gameDisplay.appendChild(cloud)
+        cloud.style.left = cloudLeft + 'px'
+
+        function moveCloud() {
+            cloudLeft -=1
+            cloud.style.left = cloudLeft + 'px'
+            cloud.style.bottom = cloudBottom + 'px'
+        }
+
+        // if (isGameOver, true) {
+        //     clearInterval(cloudTimerId)
+        // }
+
+        let cloudTimerId = setInterval(moveCloud, 50)
+        if (!isGameOver) setTimeout(generateCloud, 20000)
+
+    }
+
+    generateCloud()
+
     function generateObstacle() {
         let obstacleLeft = 500
-        let randomHeight = Math.random() * 60
+        let randomHeight = Math.random() * 80
         let rGap = gap + (Math.random() * 100)
         let obstacleBottom = randomHeight
         const obstacle = document.createElement('div')
