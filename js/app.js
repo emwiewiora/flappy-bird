@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded' , () => {
     const scorebox = document.querySelector('.score-box')
 
     let birdLeft = 220
-    let birdBottom = 150
+    let birdBottom = 200 
     let gravity = 2
     let isGameOver = false
     let gap = 430   
     let score = 0
-    let speed = 1
     let level = 1
+    
 
     function startGame() {
         birdBottom -= gravity
@@ -24,16 +24,13 @@ document.addEventListener('DOMContentLoaded' , () => {
     function control(e) {
         if (e.keyCode === 32){
             jump()
-        } else if (e.keyCode === 83){
-            startGame()
-        }
+        } 
     }
 
 
     function jump() {
         if (birdBottom < 495) birdBottom += 50
         bird.style.bottom = birdBottom + 'px'
-        console.log(birdBottom)
     }
 
     document.addEventListener('keyup', control)
@@ -56,10 +53,6 @@ document.addEventListener('DOMContentLoaded' , () => {
             cloud.style.bottom = cloudBottom + 'px'
         }
 
-        // if (isGameOver, true) {
-        //     clearInterval(cloudTimerId)
-        // }
-
         let cloudTimerId = setInterval(moveCloud, 50)
         if (!isGameOver) setTimeout(generateCloud, 20000)
 
@@ -68,6 +61,7 @@ document.addEventListener('DOMContentLoaded' , () => {
     generateCloud()
 
     function generateObstacle() {
+        let vardist = Math.random() * 500
         let obstacleLeft = 500
         let randomHeight = Math.random() * 80
         let rGap = gap + (Math.random() * (100 - (level * 10)))
@@ -108,7 +102,7 @@ document.addEventListener('DOMContentLoaded' , () => {
             }
         }
         let timerId = setInterval(moveObstacle, 21 - level)
-        if (!isGameOver) setTimeout(generateObstacle, 3000)
+        if (!isGameOver) setTimeout(generateObstacle, (2500 + vardist))
     }
 
     generateObstacle()
@@ -117,7 +111,7 @@ document.addEventListener('DOMContentLoaded' , () => {
         clearInterval(gameTimerId)
         console.log('game over')
         isGameOver = true
-        // document.removeEventListener('keyup', control)
+        document.removeEventListener('keyup', control)
         console.log(level)
     }
 

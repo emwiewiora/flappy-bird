@@ -11,17 +11,16 @@ Ania's YouTube Channel: https://www.youtube.com/aniakubow<br>
 <br>
 
 Things I changed:
+Added a random gap feature.
+Added a moving cloud sprite to add depth to the game.
+Game speed gets faster the longer you play. "levels"
+Added a slight variable column generation
 set body to "overflow-y: hidden;" to avoid page scrolling.
 set ".game-container" to "overflow: hidden;" and removed the left and right border panels.
+Re-layout the game so it is centered on the window horizontally .
+
 
 Todo:<br>
-Player Sprite - done<br>
-Column Sprite - done<br>
-Background img - done<br>
-ground img - done<br>
 Score - done but needs work<br>
 Score board<br>
 Start button<br>
-Random Gap -  done<br>
-level based adjustments<br>
-Moving clouds - done<br>

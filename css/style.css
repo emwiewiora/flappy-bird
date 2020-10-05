@@ -1,13 +1,17 @@
+/* don't forget to add https://raw.githubusercontent.com/emwiewiora/flappy-bird/main/ 
+to all imgs when coping to Codepen.io */
+
 body {
     display: flex;
     overflow-y: hidden;
 }
 .game-container {
+    margin: auto;
     width: 500px;
     height: 730px;
-    position: absolute;
+    position: relative;
     align-items: auto;
-    left: 90px;
+    /* left: 90px; */
     z-index: auto;
     overflow: hidden;
 }
@@ -33,25 +37,21 @@ body {
 }
 
 .sky {
-    /* background-color: lightblue; */
     background-image: url('/img/fb-game-background.png');
     width: 500px;
     height: 580px;
-    position: absolute;
+    position: relative;
 }
 
 .ground {
-    /* background-color: brown; */
     background-image: url('/img/bottom-background.png');
     width: 500px;
     height: 150px;
-    position: absolute;
-    top: 580px;
+    position: relative;
     z-index: 4;
 }
 
 .bird {
-    /* background-color: yellow; */
     background-image: url('/img/flappy-bird.png');
     position: absolute;
     width: 60px;
@@ -61,7 +61,6 @@ body {
 }
 
 .obstacle {
-    /* background-color: green; */
     background-image: url('/img/flappybird-pipe.png');
     width: 60px;
     height: 300px;
@@ -70,7 +69,6 @@ body {
 }
 
 .topObstacle {
-    /* background-color: green; */
     background-image: url('/img/flappybird-pipe.png');
     transform: rotate(180deg);
     width: 60px;
