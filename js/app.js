@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded' , () => {
     let isGameOver = false
     let gap = 430   
     let score = 0
+    let speed = 1
+    let level = 1
 
     function startGame() {
         birdBottom -= gravity
@@ -22,6 +24,8 @@ document.addEventListener('DOMContentLoaded' , () => {
     function control(e) {
         if (e.keyCode === 32){
             jump()
+        } else if (e.keyCode === 83){
+            startGame()
         }
     }
 
@@ -66,7 +70,7 @@ document.addEventListener('DOMContentLoaded' , () => {
     function generateObstacle() {
         let obstacleLeft = 500
         let randomHeight = Math.random() * 80
-        let rGap = gap + (Math.random() * 100)
+        let rGap = gap + (Math.random() * (100 - (level * 10)))
         let obstacleBottom = randomHeight
         const obstacle = document.createElement('div')
         const topObstacle = document.createElement('div')
@@ -86,12 +90,13 @@ document.addEventListener('DOMContentLoaded' , () => {
             obstacle.style.left = obstacleLeft + 'px'
             topObstacle.style.left = obstacleLeft + 'px'
 
-            if (obstacleLeft === -60) {
+            if (obstacleLeft === -60) {  
                 clearInterval(timerId)
                 gameDisplay.removeChild(obstacle)
                 gameDisplay.removeChild(topObstacle)
                 score +=1
                 scorebox.innerHTML = score
+                level = Math.floor(score / 10)
             }
 
             if (obstacleLeft > 200 && obstacleLeft < 280 && birdLeft === 220 &&
@@ -102,7 +107,7 @@ document.addEventListener('DOMContentLoaded' , () => {
                 clearInterval(timerId)
             }
         }
-        let timerId = setInterval(moveObstacle, 20)
+        let timerId = setInterval(moveObstacle, 21 - level)
         if (!isGameOver) setTimeout(generateObstacle, 3000)
     }
 
@@ -112,7 +117,8 @@ document.addEventListener('DOMContentLoaded' , () => {
         clearInterval(gameTimerId)
         console.log('game over')
         isGameOver = true
-        document.removeEventListener('keyup', control)
+        // document.removeEventListener('keyup', control)
+        console.log(level)
     }
 
 })

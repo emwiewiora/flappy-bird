@@ -6,36 +6,18 @@ body {
     width: 500px;
     height: 730px;
     position: absolute;
-    left: 88px;
+    align-items: auto;
+    left: 90px;
     z-index: auto;
-}
-
-.border-left {
-    width: 80px;
-    height: 790px;
-    position: absolute;
-    background-color: white;
-    z-index: 4;
-    top: -5px;
-}
-
-.border-right {
-    width: 80px;
-    height: 790px;
-    position: absolute;
-    background-color: white;
-    z-index: 4;
-    left: 585px;
-    top: -5px;
+    overflow: hidden;
 }
 
 .border-top {
     width: 500px;
-    height: 50px;
+    height: 42px;
     position: absolute;
     background-color:tan;
     z-index: 4;
-    top: -15px;
     display: flex;
 }
 
@@ -44,8 +26,6 @@ body {
     height: 40px;
     border: solid 1px;
     border-color: black;
-    /* background-color: brown; */
-    margin-top: 5px;
     text-align: center;
     font-size: xx-large;
     font-weight: 900;

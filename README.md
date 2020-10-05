@@ -10,6 +10,9 @@ Ania's Twitter: https://www.twitter.com/ania_kubow<br>
 Ania's YouTube Channel: https://www.youtube.com/aniakubow<br>
 <br>
 
+Things I changed:
+set body to "overflow-y: hidden;" to avoid page scrolling.
+set ".game-container" to "overflow: hidden;" and removed the left and right border panels.
 
 Todo:<br>
 Player Sprite - done<br>
@@ -21,3 +24,4 @@ Score board<br>
 Start button<br>
 Random Gap -  done<br>
 level based adjustments<br>
+Moving clouds - done<br>
