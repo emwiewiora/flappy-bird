@@ -88,8 +88,8 @@ document.addEventListener('DOMContentLoaded' , () => {
                 clearInterval(timerId)
                 gameDisplay.removeChild(obstacle)
                 gameDisplay.removeChild(topObstacle)
+                scorebox.innerHTML = score + ' Score'
                 score +=1
-                scorebox.innerHTML = score
                 level = Math.floor(score / 10)
             }
 
